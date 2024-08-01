@@ -418,21 +418,34 @@
 }
 
 .block-1 {
+    position: relative;
     height: 206px;
+    overflow: hidden;
 }
-
-/* КОД ЛОМАЕТСЯ ПОЧЕМУ-ТО */
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) and (max-width: 767px) {
+    .block-1 {
+        height: auto;
+        min-height: 206px;
+        max-height: 260px;
+    }
+}
+/* С ОБЫЧНЫМ КЛАССОМ КОД ЛОМАЕТСЯ ПОЧЕМУ-ТО, 
+ПРИШЛОСЬ ЗАДАТЬ ОБЩИЙ КЛАСС ДЛЯ ПЕРВЫХ ДВУХ ЭЛЕМЕНТОВ */
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
-    .block-1:nth-child(-n+2) {
+    .block-1-fix {
         height: 404px;
     }
 } 
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     /* первые 2 элемента */
-    .block-1:nth-child(-n+2) {
+    .block-1-fix {
         height: 260px;
+    }
+    .block-1 {
+        height: 206px;
     }
 }
 /* Desktop     width-1440px + */
@@ -441,8 +454,11 @@
         height: 260px;
     }
 }
+
+
 .block-1__image {
     position: relative;
+    display: block;
     object-fit: cover;
     width: 100%;
     max-height: 100%;
@@ -459,42 +475,52 @@
 
 .block-2 {
     position: relative;
-    box-sizing: border-box;
-    height: 246px;
+    height: 214px;
     margin: 16px;
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
-    .block-2 {
-        height: 260px;
+    .block {
+        height: 228px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
+    .block-2:nth-child(-n+2) {
+        height: 163px;
+    }
     .block-2 {
-        height: 195px;
+        height: 209px;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
+    .block-2:nth-child(-n+2) {
+        height: 207px;
+    }
     .block-2 {
-        height: 239px;
+        height: 221px;
     }
 }
 
 
 .block-2_zag3 {
+    display: flex;
+    margin: 16px 0 0 0;
     font-size: 18px;
     color: rgb(51, 51, 51);
 }
 .block-2_author {
+    display: flex;
+    margin: 4px 0 0 0;
     font-size: 12px;
     color: rgb(73, 73, 73);
 }
 .block-2_opis {
+    display: flex;
+    margin: 8px 0;
     font-size: 14px;
     color: rgb(51, 51, 51);
-
 }
 .block-2_content-date {
     display: flex;

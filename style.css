@@ -143,6 +143,13 @@
     border: none;
     background: rgb(227, 245, 245);
     cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+}
+.btn-header:hover {
+    box-shadow: 0 0 10px 5px rgba(12, 142, 151, 0.5);
+}
+.btn-header:active {
+    box-shadow: 0 0 20px 5px rgba(12, 151, 47, 0.7);
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
@@ -202,6 +209,8 @@
 .main {
     grid-area: main;
     position: relative;
+    display: flex;
+    flex-direction: column;
     top: 56px;
     left: 0;
 }
@@ -531,8 +540,56 @@
     color: rgb(134, 134, 134);
 }
 
+.btn-main {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 4340px;
+    align-items: center;
+    justify-content: center;
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .btn-main {
+        top: 4200px;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .btn-main {
+        top: 2994px;
+    }
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .btn-main {
+        top: 1832px;
+    }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .btn-main {
+        top: 1837px;
+    }
+}
 
 
+
+.btn-main__more {
+    box-sizing: border-box;
+    position: absolute;
+    width: 182px;
+    height: 48px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    background: rgb(53, 179, 169);
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+}
 
 
 

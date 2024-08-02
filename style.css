@@ -2,6 +2,10 @@
 * {
     font-family: Montserrat, sans-serif;
 }
+::selection {
+    color: rgb(116, 91, 207);
+    background-color: bisque
+}
 
 .layout {
     position: relative;
@@ -168,6 +172,7 @@
     width: 40px;
     height: 40px;
     right: 8px;
+    cursor: pointer;
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
@@ -484,31 +489,37 @@
 
 .block-2 {
     position: relative;
-    height: 214px;
+    height: auto;
+    max-height: 249px;
     margin: 16px;
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
-    .block {
-        height: 228px;
+    .block-2 {
+        height: auto;
+        max-height: 176px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .block-2:nth-child(-n+2) {
-        height: 163px;
+        height: auto;
+        max-height: 163px;
     }
     .block-2 {
-        height: 209px;
+        height: auto;
+        max-height: 209px;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     .block-2:nth-child(-n+2) {
-        height: 207px;
+        height: auto;
+        max-height: 207px;
     }
     .block-2 {
-        height: 221px;
+        height: auto;
+        max-height: 221px;
     }
 }
 

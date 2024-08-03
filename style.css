@@ -235,7 +235,7 @@
 
 /* НАВИГАЦИЯ ПО СТРАНИЦАМ */
 .main-title {
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
     width: 100%;

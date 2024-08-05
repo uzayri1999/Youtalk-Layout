@@ -24,16 +24,14 @@
                 </svg>
             </div>
             <nav class="nav">
-                <div class="nav__list">
-                    <a class="nav-link nav__list_about" href="#">О нас</a>
-                    <a class="nav-link nav__list_tariffs" href="#">Тарифы</a>
-                    <a class="nav-link nav__list_for_business" href="#">Для бизнеса</a>
-                    <a class="nav-link nav__list_for_psychologists" href="#">Психологам</a>
-                    <a class="nav-link nav__list_certificates" href="#">Сертификаты</a>
-                    <a class="nav-link nav__list_materials" href="#">Материалы</a>
-                    <botton class="nav-link nav__list_arrow-bottom"><img src="images/header/bottom_Vector.svg" alt="стрелка вниз"></botton>
-                    <a class="nav-link nav__list_faq" href="#">FAQ</a>
-                </div>
+                <a class="nav__list nav__list_about" href="#">О нас</a>
+                <a class="nav__list nav__list_tariffs" href="#">Тарифы</a>
+                <a class="nav__list nav__list_for_business" href="#">Для бизнеса</a>
+                <a class="nav__list nav__list_for_psychologists" href="#">Психологам</a>
+                <a class="nav__list nav__list_certificates" href="#">Сертификаты</a>
+                <a class="nav__list nav__list_materials" href="#">Материалы</a>
+                <botton class="nav__list nav__list_arrow-bottom"><img src="images/header/bottom_Vector.svg" alt="стрелка вниз"></botton>
+                <a class="nav__list nav__list_faq" href="#">FAQ</a>
             </nav>
             <button class="btn-header">Подобрать психолога</button>
             <div class="burger">
@@ -41,34 +39,34 @@
             </div>
         </header>
         <div class="line"></div>
+        <section class="verhushka">
+            <div class="verh-title">
+                <a class="verh-title__elem" href="#">Главная</a>
+                <a class="verh-title__elem" href="#">Блог</a>
+            </div>
+            <div class="blog">
+                <h1>Блог</h1>
+            </div>
+            <div class="filter">
+                <button class="filter__btn"><img class="smile-svg" src="images/main/smiles/Smile_Unicorn.svg">Все</button>
+                <button class="filter__btn">Самооценка и самопринятие</button>
+                <button class="filter__btn filter__btn_active"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                <button class="filter__btn">Чувства и эиоции</button>
+                <button class="filter__btn">Тревога</button>
+                <button class="filter__btn">Упражнения</button>
+                <button class="filter__btn">Психология питания</button>
+                <button class="filter__btn">Насилие</button>
+                <button class="filter__btn">Личное здоровье</button>
+            </div>
+        </section>
         <main class="main">
-            <section class="verhushka">
-                <div class="main-title">
-                    <a class="main-title__elem" href="#">Главная</a>
-                    <a class="main-title__elem" href="#">Блог</a>
-                </div>
-                <div class="blog">
-                    <h1 class="blog__zagolovok">Блог</h1>
-                </div>
-                <div class="filter">
-                    <button class="filter__btn"><img class="smile-svg" src="images/main/smiles/Smile_Unicorn.svg">Все</button>
-                    <button class="filter__btn">Самооценка и самопринятие</button>
-                    <button class="filter__btn filter__btn_active"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
-                    <button class="filter__btn">Чувства и эиоции</button>
-                    <button class="filter__btn">Тревога</button>
-                    <button class="filter__btn">Упражнения</button>
-                    <button class="filter__btn">Психология питания</button>
-                    <button class="filter__btn">Насилие</button>
-                    <button class="filter__btn">Личное здоровье</button>
-                </div>
-            </section>
             <section class="main-content">
                 <!-- 1_BLOCK -->
                 <article class="main-content__block">
                     <div class="block-1 block-1-fix">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Самооценка и самопринятие</button>
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Самооценка и самопринятие</span>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/eggs.png" alt="эмоциональные яйца">
                     </div>
@@ -83,7 +81,7 @@
                 <article class="main-content__block">
                     <div class="block-1 block-1-fix">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/runner.png" alt="бегущий человек">
                     </div>
@@ -98,8 +96,8 @@
                 <article class="main-content__block">
                     <div class="block-1">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Самооценка и самопринятие</button>
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Психология питания</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Самооценка и самопринятие</span>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Психология питания</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/sleep-girl.png" alt="Девушка спит">
                     </div>
@@ -114,7 +112,7 @@
                 <article class="main-content__block">
                     <div class="block-1">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/swim-girl.png" alt="Девушка плавает">
                     </div>
@@ -129,7 +127,7 @@
                 <article class="main-content__block">
                     <div class="block-1">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/evil-banner.png" alt="Злой баннер">
                     </div>
@@ -144,7 +142,7 @@
                 <article class="main-content__block">
                     <div class="block-1">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/grandma-blonde.png" alt="Бабуля за компом">
                     </div>
@@ -159,7 +157,7 @@
                 <article class="main-content__block">
                     <div class="block-1">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/grandma-brunnete.png" alt="Бабуля за компом (уже другая)">
                     </div>
@@ -174,7 +172,7 @@
                 <article class="main-content__block">
                     <div class="block-1">
                         <div class="filter-block">
-                            <button class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</button>
+                            <span class="filter__btn block-1__filter-block_elem"><img class="smile-svg" src="images/main/smiles/Poni_Unicorn.svg">Self</span>
                         </div>
                         <img class="block-1__image" src="images/main/new/boys.png" alt="Пацаны шагают">
                     </div>
@@ -186,12 +184,41 @@
                     <span class="block-2_content-date">07.08.2021</span>
                 </article>
             </section>
-            <section class="btn-main">
-                <button class="btn-main__more">Ещё</button>
+            <!-- <section class="btn-main">
+                <div class="pages">
+                    <button class="v-nachalo pages-number">В начало</button>
+                    <button class="pages-number pages-number_active">1</button>
+                    <button class="pages-number">2</button>
+                    <button class="pages-number">3</button>
+                    <button class="pages-number_nocursor pages-number">...</button>
+                    <button class="pages-number">12</button>
+                </div>
+                <button class="btn-main__more">Ещё</button> -->
             </section>
         </main>
-        <footer>
-            
-        </footer>
+        <!-- <footer class="footer">
+            <section class="nav-footer">
+                <div class="nav-footer__block">
+                    <a href="#" class="nav-footer__link">О нас</a>
+                    <a href="#" class="nav-footer__link">Тарифы</a>
+                    <a href="#" class="nav-footer__link">Для бизнеса</a>
+                    <a href="#" class="nav-footer__link">Психологам</a>
+                    <a href="#" class="nav-footer__link">FAQ</a>
+                </div>
+                <div class="nav-footer__block">
+                    <a href="#" class="nav-footer__link">Блог</a>
+                    <a href="#" class="nav-footer__link">Вебинары</a>
+                    <a href="#" class="nav-footer__link">Подкаст</a>
+                    <a href="#" class="nav-footer__link">Сертификат</a>
+                    <a href="#" class="nav-footer__link">Контакты</a>
+                </div>
+            </section> 
+            <section>
+
+            </section>
+            <section>
+
+            </section>
+        </footer> -->
     </body>
 </html>

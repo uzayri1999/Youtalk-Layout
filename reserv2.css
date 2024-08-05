@@ -9,15 +9,13 @@
 
 .layout {
     position: relative;
-    display: grid;
     margin: 0;
-    width: 100%;
+    display: grid;
     grid-template-columns: 16px 1fr 16px;
-    grid-template-rows: 56px 1px auto auto 746px;
+    grid-template-rows: auto;
     grid-template-areas: 
         ". header ."
         "line line line"
-        ". verh ."
         ". main ."
         "footer footer footer";
 }
@@ -25,13 +23,6 @@
 @media screen and (min-width: 414px) {
     .layout {
         grid-template-columns: 20px 1fr 20px;
-        grid-template-rows: 72px 1px auto 746px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .layout {
-        grid-template-rows: 76px 1px auto 746px;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
@@ -50,46 +41,49 @@
 
 .header {
     grid-area: header;
+    position: absolute;
     display: grid;
-    grid-template-columns: 48px 1fr 32px;
+    grid-template-columns: 112px 1fr 112px;
+    grid-template-rows: 56px;
     grid-template-areas:
         "logo nav btn";
+    align-items: center;
     width: 100%;
+    height: 56px;
+    top: 0;
+    left: 0;
+    margin: 0;
     background: rgb(255, 255, 255);
     justify-items: center;
-    align-items: center;
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
     .header {
-        grid-template-columns: 56px 1fr 48px;
+        height: 72px;
+        grid-template-rows: 72px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .header {
-        grid-template-columns: 51px 1fr 40px;
+        height: 76px;
+        grid-template-rows: 76px;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     .header {
-        grid-template-columns: 51px 1fr 230px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .header {
-        grid-template-areas:
-            "logo nav . btn";
-        grid-template-columns: 51px 4fr 1fr 230px;
+        grid-template-columns: 71px 1fr 250px;
     }
 }
 
+
 /* LOGO */
 .logo-header {
+    position: absolute;
     width: 48px;
     height: 34px;
+    left: 0;
     cursor: pointer;
 }
 /* iPad mini     width-768px - 1023px */
@@ -100,33 +94,37 @@
         height: 36px;
     }
 }
+
+
 .logo-header:hover path{
     fill: rgba(114, 19, 221, 0.87);
-}
-.logo-header:active path{
-    fill: rgba(255, 255, 0, .8);
 }
 
 /* НАВИГАЦИЯ */
 .nav {
     grid-area: nav;
     display: none;
+    flex-wrap: nowrap;
     font-size: 14px;
     font-weight: 500;
+    height: 16px;
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     .nav {
         display: flex;
-        flex-wrap: nowrap;
     }
 }
-.nav__list {
+
+
+.nav-link {
+    display: inline-block;
     text-decoration: none;
     margin-right: 16px;
+    font-weight: 500;
     color: #000
 }
-.nav__list:nth-last-child(1) {
+.nav-link:nth-last-child(1) {
     margin-right: 0;
 }
 .nav__list_materials {
@@ -136,7 +134,10 @@
 /* КНОПКА ПОДОБРАТЬ ПСИХОЛОГА*/
 .btn-header {
     grid-area: btn;
+    box-sizing: border-box;
+    position: absolute;
     display: none;
+    right: 0;
     width: 230px;
     height: 48px;
     font-weight: bold;
@@ -161,21 +162,17 @@
     }
 }
 
+
 /* BURGER */
 .burger {
     grid-area: btn;
-    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    padding: 11px;
     width: 40px;
     height: 40px;
+    right: 8px;
     cursor: pointer;
-    justify-content: center;
-    align-items: center;
-}
-.burger:hover path{
-    fill: rgba(114, 19, 221, 0.87);
-}
-.burger:active path{
-    fill: rgba(255, 255, 0, .8);
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
@@ -185,66 +182,105 @@
 }
 
 
+.burger:hover path{
+    fill: rgba(114, 19, 221, 0.87);
+}
+
 /* ЛИНИЯ */
 .line {
     grid-area: line;
+    position: absolute;
     width: 100%;
+    height: 0;
+    left: 0;
+    top: 56px;
     border: 0.5px solid rgb(239, 245, 251);
 }
-
-.verhushka {
-    grid-area: verh;
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .line {
+        top: 72px;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .line {
+        top: 76px;
+    }
 }
 
-/* НАВИГАЦИЯ ПО СТРАНИЦАМ */
-.verh-title {
+
+/* ГЛАВНАЯ */
+.main {
+    grid-area: main;
     position: relative;
     display: flex;
+    flex-direction: column;
+    top: 56px;
+    left: 0;
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .main {
+        top: 72px;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .main {
+        top: 76px;
+    }
+}
+
+
+/* НАВИГАЦИЯ ПО СТРАНИЦАМ */
+.main-title {
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
     align-items: center;
-    margin-top: 24px;
+    width: 100%;
+    top: 24px;
     height: 18px;
     font-size: 12px;
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
     .main-title {
-        margin-top: 16px;
+        top: 16px;
     }
 }
-.verh-title__elem {
+
+
+.main-title__elem {
     text-decoration: none;
     color: rgb(51, 51, 51, .7);
 }
-.verh-title__elem::after {
-    content: url(images/main/menu/arrow-right.svg);
+.main-title__elem::after {
+    content: ''url(images/main/menu/arrow-right.svg);
     margin-left: 6px;
     margin-right: 6px;
 }
-.verh-title__elem:nth-last-child(1)::after {
+.main-title__elem:nth-last-child(1)::after {
     content: '';
+    visibility: hidden;
 }
-
 /* ЗАГОЛОВОК */
 .blog {
-    position: relative;
+    position: absolute;
     display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
     align-items: center;
+    padding: 0;
+    width: 100%;
     height: 32px;
     top: 66px;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .blog {
-        height: 40px;
-        font-size: 32px;
-    }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .blog {
         top: 74px;
-        height: 56px;
-        font-size: 48px;
     }
 }
 /* Desktop     width-1440px + */
@@ -254,6 +290,11 @@
     }
 }
 
+
+.blog__zagolovok {
+    font-size: 48px;
+}
+
 /* ФИЛЬТР */
 .filter {
     position: absolute;
@@ -261,6 +302,8 @@
     flex-wrap: nowrap;
     width: 100%;
     top: 122px;
+    left: -4px;
+    right: -4px;
     overflow-x: scroll;
     scrollbar-width: none;
 }
@@ -284,33 +327,31 @@
     }
 }
 
+
 .filter__btn {
     display: flex;
+    width: auto;
     margin: 2px 4px;
     padding: 6px 8px;
     color: rgb(51, 51, 51, .9);
     border: 1px solid rgb(193, 197, 205);
     border-radius: 24px;
+    background-color: rgb(255, 255, 255);
     align-items: center;
     font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
 }
+.filter__btn:hover {
+    cursor: pointer;
+}
 .filter__btn_active {
     box-sizing: border-box;
     border: 2px solid rgb(22, 200, 187);
-}
+}   /* .filter-btn:active {
+    border: 2px solid rgb(22, 200, 187); } */
 .smile-svg {
     margin-right: 4px;
-}
-
-
-/* ГЛАВНАЯ */
-.main {
-    grid-area: main;
-    position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
 /* КОНТЕНТ */
@@ -318,9 +359,9 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    width: 100%;
     gap: 21px 24px;
     top: 178px;
+    width: 100%;
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
@@ -334,6 +375,7 @@
         top: 208px;
     }
 }
+
 
 .main-content__block {
     position: relative;
@@ -378,6 +420,7 @@
     }
 }
 
+
 .filter-block {
     position: absolute;
     display: flex;
@@ -385,10 +428,6 @@
     padding: 4px 2px;
     z-index: 99;
 }
-button.filter__btn {
-    cursor: pointer;
-}
-
 .block-1__filter-block_elem {
     max-width: max-content;
     border: solid 1px rgba(255, 255, 255, 0.25);
@@ -442,6 +481,14 @@ button.filter__btn {
     max-height: 100%;
     border-radius: 16px 16px 0 0;
 }
+    /* .block-1__image:hover  {
+    position: absolute;
+    transform: scale(0.75);
+    transition: transform 0.2s;
+    z-index: 10;
+    overflow: visible;
+    z-index: 1111;
+} */
 
 .block-2 {
     position: relative;
@@ -506,36 +553,6 @@ button.filter__btn {
     font-size: 12px;
     color: rgb(134, 134, 134);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .btn-main {
     position: relative;

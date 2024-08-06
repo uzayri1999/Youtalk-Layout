@@ -13,11 +13,11 @@
     margin: 0;
     width: 100%;
     grid-template-columns: 16px 1fr 16px;
-    grid-template-rows: 56px 1px auto auto 746px;
+    grid-template-rows: 56px 1px auto auto auto;
     grid-template-areas: 
         ". header ."
         "line line line"
-        ". verh ."
+        ". verh fon"
         ". main ."
         "footer footer footer";
 }
@@ -25,13 +25,13 @@
 @media screen and (min-width: 414px) {
     .layout {
         grid-template-columns: 20px 1fr 20px;
-        grid-template-rows: 72px 1px auto 746px;
+        grid-template-rows: 72px 1px auto auto auto;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .layout {
-        grid-template-rows: 76px 1px auto 746px;
+        grid-template-rows: 76px 1px auto auto auto;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
@@ -184,16 +184,23 @@
     }
 }
 
-
 /* ЛИНИЯ */
 .line {
     grid-area: line;
     width: 100%;
     border: 0.5px solid rgb(239, 245, 251);
 }
-
+/* НУЖНО БЫЛО УТОПИТЬ ДРУГОЙ ЭОЕМЕНТ ПОД ФОНОМ */
+.fon {
+    grid-area: fon;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 111;
+}
 .verhushka {
     grid-area: verh;
+    width: 100%;
 }
 
 /* НАВИГАЦИЯ ПО СТРАНИЦАМ */
@@ -207,10 +214,17 @@
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
-    .main-title {
+    .verh-title {
         margin-top: 16px;
     }
 }
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .verh-title {
+        margin-left: 6px;
+    }
+}
+
 .verh-title__elem {
     text-decoration: none;
     color: rgb(51, 51, 51, .7);
@@ -230,11 +244,14 @@
     display: flex;
     align-items: center;
     height: 32px;
-    top: 66px;
+    margin-top: 24px;
+    margin-bottom: 80px;
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
     .blog {
+        margin-top: 32px;
+        margin-bottom: 72px;
         height: 40px;
         font-size: 32px;
     }
@@ -242,7 +259,8 @@
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .blog {
-        top: 74px;
+        margin-top: 40px;
+        margin-bottom: 31px;
         height: 56px;
         font-size: 48px;
     }
@@ -250,7 +268,8 @@
 /* Desktop     width-1440px + */
 @media screen and (min-width: 1440px) {
     .blog {
-        top: 64px;
+        margin-top: 30px;
+        margin-bottom: 29px;
     }
 }
 
@@ -258,29 +277,34 @@
 .filter {
     position: absolute;
     display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    top: 122px;
+    width: 96%;
+    top: 178px;
+    left: 16px;
     overflow-x: scroll;
     scrollbar-width: none;
 }
+
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
     .filter {
-        top: 130px;
+        top: 202px;
+        left: 20px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .filter {
+        position: relative;
         flex-wrap: wrap;
-        top: 162px;
+        top: 0;
+        left: -4px;
+        margin-bottom: 23px;
     }
 }
 /* Desktop     width-1440px + */
 @media screen and (min-width: 1440px) {
     .filter {
-        top: 152px;
+        margin-bottom: 21px;
     }
 }
 
@@ -296,6 +320,7 @@
     font-weight: 600;
     white-space: nowrap;
 }
+
 .filter__btn_active {
     box-sizing: border-box;
     border: 2px solid rgb(22, 200, 187);
@@ -318,21 +343,9 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    margin: 0;
     width: 100%;
     gap: 21px 24px;
-    top: 178px;
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .main-content {
-        top: 258px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .main-content {
-        top: 208px;
-    }
 }
 
 .main-content__block {
@@ -433,7 +446,6 @@ button.filter__btn {
     }
 }
 
-
 .block-1__image {
     position: relative;
     display: block;
@@ -479,7 +491,6 @@ button.filter__btn {
     }
 }
 
-
 .block-2_zag3 {
     display: flex;
     margin: 16px 0 0 0;
@@ -507,42 +518,13 @@ button.filter__btn {
     color: rgb(134, 134, 134);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .btn-main {
     position: relative;
     display: flex;
     width: 100%;
     height: 48px;
-    top: 206px;
+    margin-top: 28px;
+    margin-bottom: 59px;
     align-items: center;
     justify-content: center;
 }
@@ -550,16 +532,24 @@ button.filter__btn {
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .btn-main {
-        top: 291px;
+        margin-top: 33px;
+        margin-bottom: 55px;
+    }
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .btn-main {
+        margin-top: 35px;
+        margin-bottom: 60px;
     }
 }
 /* Desktop     width-1440px + */
 @media screen and (min-width: 1440px) {
     .btn-main {
-        top: 264px;
+        margin-top: 56px;
+        margin-bottom: 96px;
     }
 }
-
 
 .pages {
     position: absolute;
@@ -567,7 +557,6 @@ button.filter__btn {
     left: 0;
     height: 48px;
 }
-
 .pages-number {
     display: flex;
     justify-content: center;
@@ -590,24 +579,20 @@ button.filter__btn {
 .pages-number_nocursor {
     cursor: default;
 }
-
-
 .pages-number_active {
     box-sizing: border-box;
     border: 1px solid rgb(3, 178, 165);
     background: rgb(227, 245, 245);
 }
-
 .v-nachalo {
     width: 95px;
     margin-right: 24px;
     color: rgb(196, 196, 196);
     background: rgb(239, 242, 242);
 }
-
 .btn-main__more {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 182px;
     height: 48px;
     font-weight: bold;
@@ -630,45 +615,106 @@ button.filter__btn {
     grid-area: footer;
     position: relative;
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    padding: 14px;
     height: auto;
-    top: 321px;
+    color: #fff;
     background: rgb(41, 99, 163);
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
     .footer {
-        top: 337px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .footer {
-        top: 422px;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     .footer {
-        top: 427px;
     }
 }
 /* Desktop     width-1440px + */
 @media screen and (min-width: 1440px) {
     .footer {
-        top: 437px;
     }
 }
 
 .nav-footer {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    flex-grow: 1;
+    height: auto;
+    margin-top: 21px;
 }
 
+.nav-footer__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-footer__link {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    height: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.send-bar {
+    display: flex;
+    flex-direction: column;
+}
+.odno-pismo {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+.email-bar {
+    display: flex;
+    height: 48px;
+}
+.e-mail {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 4px;
+}
+.send-img {
+    position: absolute;
+    right: 14px;
+}
+.polit-konfid {
+    margin: 12px 0 5px 0;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.line-footer {
+    margin-top: 20px;
+    height: 2px;
+    background-color: rgba(157, 157, 157, .3);
+}
+
+.ssilki {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.ssilki__link {
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.7;
+}
 
 
 /* БЕЗ CSS КОДА */
@@ -678,4 +724,12 @@ button.filter__btn {
         width: 51px;
         height: 36px;
     }
+}
+@media screen and (max-width: 767px) {
+    button.filter__btn:first-child {
+        margin-left: 0;
+    }
+}
+button.filter__btn:last-child {
+    margin-right: 8px;
 }

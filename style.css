@@ -17,36 +17,10 @@
     grid-template-areas: 
         ". header ."
         "line line line"
-        ". verh fon"
+        ". verh ."
         ". main ."
         "footer footer footer";
 }
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .layout {
-        grid-template-columns: 20px 1fr 20px;
-        grid-template-rows: 72px 1px auto auto auto;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .layout {
-        grid-template-rows: 76px 1px auto auto auto;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .layout {
-        grid-template-columns: 32px 1fr 32px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .layout {
-        grid-template-columns: 120px 1fr 120px;
-    }  
-}
-
 
 .header {
     grid-area: header;
@@ -59,46 +33,12 @@
     justify-items: center;
     align-items: center;
 }
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .header {
-        grid-template-columns: 56px 1fr 48px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .header {
-        grid-template-columns: 51px 1fr 40px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .header {
-        grid-template-columns: 51px 1fr 230px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .header {
-        grid-template-areas:
-            "logo nav . btn";
-        grid-template-columns: 51px 4fr 1fr 230px;
-    }
-}
 
 /* LOGO */
 .logo-header {
     width: 48px;
     height: 34px;
     cursor: pointer;
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .logo-header {
-        grid-area: logo;
-        width: 51px;
-        height: 36px;
-    }
 }
 .logo-header:hover path{
     fill: rgba(114, 19, 221, 0.87);
@@ -114,13 +54,7 @@
     font-size: 14px;
     font-weight: 500;
 }
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .nav {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-}
+
 .nav__list {
     text-decoration: none;
     margin-right: 16px;
@@ -154,12 +88,6 @@
 .btn-header:active {
     box-shadow: 0 0 20px 5px rgba(12, 151, 47, 0.7);
 }
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .btn-header {
-        display: initial;
-    }
-}
 
 /* BURGER */
 .burger {
@@ -177,12 +105,7 @@
 .burger:active path{
     fill: rgba(255, 255, 0, .8);
 }
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .burger {
-        display: none;
-    }
-}
+
 
 /* ЛИНИЯ */
 .line {
@@ -190,20 +113,13 @@
     width: 100%;
     border: 0.5px solid rgb(239, 245, 251);
 }
-/* НУЖНО БЫЛО УТОПИТЬ ДРУГОЙ ЭОЕМЕНТ ПОД ФОНОМ */
-.fon {
-    grid-area: fon;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 111;
-}
+
+
 .verhushka {
     grid-area: verh;
     width: 100%;
 }
 
-/* НАВИГАЦИЯ ПО СТРАНИЦАМ */
 .verh-title {
     position: relative;
     display: flex;
@@ -211,18 +127,6 @@
     margin-top: 24px;
     height: 18px;
     font-size: 12px;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .verh-title {
-        margin-top: 16px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .verh-title {
-        margin-left: 6px;
-    }
 }
 
 .verh-title__elem {
@@ -247,65 +151,16 @@
     margin-top: 24px;
     margin-bottom: 80px;
 }
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .blog {
-        margin-top: 32px;
-        margin-bottom: 72px;
-        height: 40px;
-        font-size: 32px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .blog {
-        margin-top: 40px;
-        margin-bottom: 31px;
-        height: 56px;
-        font-size: 48px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .blog {
-        margin-top: 30px;
-        margin-bottom: 29px;
-    }
-}
 
 /* ФИЛЬТР */
 .filter {
     position: absolute;
     display: flex;
-    width: 96%;
+    width: calc(100vw - 32px);
     top: 178px;
     left: 16px;
     overflow-x: scroll;
     scrollbar-width: none;
-}
-
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .filter {
-        top: 202px;
-        left: 20px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .filter {
-        position: relative;
-        flex-wrap: wrap;
-        top: 0;
-        left: -4px;
-        margin-bottom: 23px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .filter {
-        margin-bottom: 21px;
-    }
 }
 
 .filter__btn {
@@ -320,7 +175,6 @@
     font-weight: 600;
     white-space: nowrap;
 }
-
 .filter__btn_active {
     box-sizing: border-box;
     border: 2px solid rgb(22, 200, 187);
@@ -338,7 +192,6 @@
     flex-direction: column;
 }
 
-/* КОНТЕНТ */
 .main-content {
     position: relative;
     display: grid;
@@ -355,39 +208,12 @@
     border-radius: 16px;
     margin-bottom: 5px;
     box-shadow: 0 3px 5px #808080;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .main-content__block {
-        height: 466px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .main-content__block {
-        grid-column: span 3;
-        height: 446px;
-    }
-    .main-content__block:nth-child(-n+2) {
-        grid-column: span 6;
-        height: 599px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .main-content__block {
-        grid-column: span 2;
-        height: 458px;
-    }
-    .main-content__block:nth-child(-n+2) {
-        grid-column: span 3;
-        height: 499px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .main-content__block {
-        height: 475px;
+    
+    &:hover {
+        cursor: pointer;
+        transition-duration: 0.25s;
+        transform: scale(1.02);
+        box-shadow: 0 3px 15px 5px #6ac7b3;
     }
 }
 
@@ -401,7 +227,6 @@
 button.filter__btn {
     cursor: pointer;
 }
-
 .block-1__filter-block_elem {
     max-width: max-content;
     border: solid 1px rgba(255, 255, 255, 0.25);
@@ -413,38 +238,6 @@ button.filter__btn {
     height: 206px;
     overflow: hidden;
 }
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) and (max-width: 767px) {
-    .block-1 {
-        height: auto;
-        min-height: 206px;
-        max-height: 260px;
-    }
-}
-/* С ОБЫЧНЫМ КЛАССОМ КОД ЛОМАЕТСЯ ПОЧЕМУ-ТО, 
-ПРИШЛОСЬ ЗАДАТЬ ОБЩИЙ КЛАСС ДЛЯ ПЕРВЫХ ДВУХ ЭЛЕМЕНТОВ */
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .block-1-fix {
-        height: 404px;
-    }
-} 
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    /* первые 2 элемента */
-    .block-1-fix {
-        height: 260px;
-    }
-    .block-1 {
-        height: 206px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .block-1 {
-        height: 260px;
-    }
-}
 
 .block-1__image {
     position: relative;
@@ -455,40 +248,12 @@ button.filter__btn {
     border-radius: 16px 16px 0 0;
 }
 
+
 .block-2 {
     position: relative;
     height: auto;
     max-height: 249px;
     margin: 16px;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .block-2 {
-        height: auto;
-        max-height: 176px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .block-2:nth-child(-n+2) {
-        height: auto;
-        max-height: 163px;
-    }
-    .block-2 {
-        height: auto;
-        max-height: 209px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .block-2:nth-child(-n+2) {
-        height: auto;
-        max-height: 207px;
-    }
-    .block-2 {
-        height: auto;
-        max-height: 221px;
-    }
 }
 
 .block-2_zag3 {
@@ -518,6 +283,7 @@ button.filter__btn {
     color: rgb(134, 134, 134);
 }
 
+
 .btn-main {
     position: relative;
     display: flex;
@@ -527,28 +293,6 @@ button.filter__btn {
     margin-bottom: 59px;
     align-items: center;
     justify-content: center;
-}
-
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .btn-main {
-        margin-top: 33px;
-        margin-bottom: 55px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .btn-main {
-        margin-top: 35px;
-        margin-bottom: 60px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .btn-main {
-        margin-top: 56px;
-        margin-bottom: 96px;
-    }
 }
 
 .pages {
@@ -570,12 +314,6 @@ button.filter__btn {
     background: rgb(255, 255, 255);
     cursor: pointer;
 }
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .pages {
-        display: flex;
-    }
-}
 .pages-number_nocursor {
     cursor: default;
 }
@@ -590,6 +328,7 @@ button.filter__btn {
     color: rgb(196, 196, 196);
     background: rgb(239, 242, 242);
 }
+
 .btn-main__more {
     box-sizing: border-box;
     position: relative;
@@ -611,35 +350,17 @@ button.filter__btn {
     box-shadow: 0 0 20px 5px rgba(73, 148, 30, 0.7); 
 }
 
+
+/* FOOTER */    
 .footer {
     grid-area: footer;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 14px;
+    padding: 16px;
     height: auto;
     color: #fff;
     background: rgb(41, 99, 163);
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .footer {
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .footer {
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .footer {
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .footer {
-    }
 }
 
 .nav-footer {
@@ -649,9 +370,8 @@ button.filter__btn {
     justify-content: space-between;
     width: 100%;
     height: auto;
-    margin-top: 21px;
+    margin-top: 19px;
 }
-
 .nav-footer__block {
     display: flex;
     flex-direction: column;
@@ -669,6 +389,7 @@ button.filter__btn {
 .send-bar {
     display: flex;
     flex-direction: column;
+    max-width: 450px;
 }
 .odno-pismo {
     margin: 8px 0;
@@ -677,6 +398,7 @@ button.filter__btn {
 }
 .email-bar {
     display: flex;
+    max-width: 384px;
     height: 48px;
 }
 .e-mail {
@@ -688,12 +410,13 @@ button.filter__btn {
     border-radius: 4px;
 }
 .send-img {
-    position: absolute;
-    right: 14px;
+    position: relative;
+    cursor: pointer;
 }
 .polit-konfid {
     margin: 12px 0 5px 0;
     font-size: 12px;
+    line-height: 18px;
     opacity: 0.7;
 }
 
@@ -717,19 +440,244 @@ button.filter__btn {
 }
 
 
-/* БЕЗ CSS КОДА */
-/* iPad mini     width-768px - 1023px */
+button.filter__btn:last-child {
+    margin-right: 8px;
+}
+
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) and (max-width: 767px) {
+    .block-1 {
+        height: auto;
+        min-height: 206px;
+        max-height: 260px;
+    }
+}
+
+/* iPhone 11 Pro Max     width-414px */
+@media screen and (min-width: 414px) {
+    .layout {
+        grid-template-columns: 20px 1fr 20px;
+        grid-template-rows: 72px 1px auto auto auto;
+    }
+    .header {
+        grid-template-columns: 56px 1fr 48px;
+    }
+    .verh-title {
+        margin-top: 16px;
+    }
+    .blog {
+        margin-top: 32px;
+        margin-bottom: 72px;
+        height: 40px;
+        font-size: 32px;
+    }
+    .filter {
+        width: calc(100vw - 40px);
+        top: 202px;
+        left: 20px;
+    }
+    .main-content__block {
+        height: 466px;
+    }
+    .block-2 {
+        height: auto;
+        max-height: 176px;
+    }
+    .footer {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .polit-konfid {
+        margin-bottom: 31px;
+    }
+}
+
+/* iPad mini     width-768px */
 @media screen and (min-width: 768px) {
+    .layout {
+        grid-template-rows: 76px 1px auto auto auto;
+    }
+    .header {
+        grid-template-columns: 51px 1fr 40px;
+    }
+    .logo-header {
+        grid-area: logo;
+        width: 51px;
+        height: 36px;
+    }
     .logo-header__svg {  
         width: 51px;
         height: 36px;
     }
+    .blog {
+        margin-top: 40px;
+        margin-bottom: 31px;
+        height: 56px;
+        font-size: 48px;
+    }
+    .filter {
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%;
+        top: 0;
+        left: -4px;
+        margin-bottom: 23px;
+    }
+    .main-content__block {
+        grid-column: span 3;
+        height: 446px;
+    }
+    .main-content__block:nth-child(-n+2) {
+        grid-column: span 6;
+        height: 599px;
+    }
+    .block-1-fix {
+        height: 404px;
+    }
+    .block-2:nth-child(-n+2) {
+        height: auto;
+        max-height: 163px;
+    }
+    .block-2 {
+        height: auto;
+        max-height: 209px;
+    }
+    .btn-main {
+        margin-top: 33px;
+        margin-bottom: 55px;
+    }
+    .footer__section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        column-gap: 31px;
+    }
+    .nav-footer {
+        max-width: 310px;
+    }
+    .odno-pismo {
+        margin-top: 19px;
+    }
+    .ssilki {
+        flex-direction: row;
+    }
+    .ssilki__link {
+        margin-top: 5px;
+        margin-right: 48px;
+    }
 }
-@media screen and (max-width: 767px) {
+
+/* iPad Pro 12.9"     width-1024px */
+@media screen and (min-width: 1024px) {
+    .layout {
+        grid-template-columns: 32px 1fr 32px;
+    }
+    .header {
+        grid-template-columns: 51px 1fr 230px;
+    }
+    .nav {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .btn-header {
+        display: initial;
+    }
+    .burger {
+        display: none;
+    }
+    .main-content__block {
+        grid-column: span 2;
+        height: 458px;
+    }
+    .main-content__block:nth-child(-n+2) {
+        grid-column: span 3;
+        height: 499px;
+    }
+    .block-1-fix {
+        height: 260px;
+    }
+    .block-1 {
+        height: 206px;
+    }
+    .block-2:nth-child(-n+2) {
+        height: auto;
+        max-height: 207px;
+    }
+    .block-2 {
+        height: auto;
+        max-height: 221px;
+    }
+    .btn-main {
+        margin-top: 35px;
+        margin-bottom: 60px;
+    }
+    .footer {
+        padding: 21px 32px;
+    }
+    .footer-bez-ssilok {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .footer__section {
+        column-gap: 21px;
+        flex-grow: 100;
+    }
+    .logo-footer {
+        margin-top: 19px;
+        flex-grow: 99;
+    }
+    .logo-footer__svg {
+        position: relative;
+        left: calc(100% - 221px)
+    }
+    .line-footer {
+        margin-top: 0;
+    }
+}
+
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .layout {
+        grid-template-columns: 120px 1fr 120px;
+    }
+    .header {
+        grid-template-areas:
+            "logo nav . btn";
+        grid-template-columns: 51px 4fr 1fr 230px;
+    }
+    .verh-title {
+        margin-left: 6px;
+    }
+    .blog {
+        margin-top: 30px;
+        margin-bottom: 29px;
+    }
+    .filter {
+        margin-bottom: 21px;
+    }
+    .main-content__block {
+        height: 475px;
+    }
+    .block-1 {
+        height: 260px;
+    }
+    .btn-main {
+        margin-top: 56px;
+        margin-bottom: 96px;
+    }
+    .pages {
+        display: flex;
+    }
+    .footer {
+        padding: 21px 120px;
+    }
+}
+
+
+/* ТУТ MAX-WIDTH. НЕ ПУТАТЬ!!! */
+@media screen and (max-width: 768px) {
     button.filter__btn:first-child {
         margin-left: 0;
     }
-}
-button.filter__btn:last-child {
-    margin-right: 8px;
 }

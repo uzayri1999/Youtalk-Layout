@@ -9,13 +9,15 @@
 
 .layout {
     position: relative;
-    margin: 0;
     display: grid;
+    margin: 0;
+    width: 100%;
     grid-template-columns: 16px 1fr 16px;
-    grid-template-rows: auto;
+    grid-template-rows: 56px 1px auto auto auto;
     grid-template-areas: 
         ". header ."
         "line line line"
+        ". verh ."
         ". main ."
         "footer footer footer";
 }
@@ -23,6 +25,13 @@
 @media screen and (min-width: 414px) {
     .layout {
         grid-template-columns: 20px 1fr 20px;
+        grid-template-rows: 72px 1px auto auto auto;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .layout {
+        grid-template-rows: 76px 1px auto auto auto;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
@@ -41,49 +50,46 @@
 
 .header {
     grid-area: header;
-    position: absolute;
     display: grid;
-    grid-template-columns: 112px 1fr 112px;
-    grid-template-rows: 56px;
+    grid-template-columns: 48px 1fr 32px;
     grid-template-areas:
         "logo nav btn";
-    align-items: center;
     width: 100%;
-    height: 56px;
-    top: 0;
-    left: 0;
-    margin: 0;
     background: rgb(255, 255, 255);
     justify-items: center;
+    align-items: center;
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
     .header {
-        height: 72px;
-        grid-template-rows: 72px;
+        grid-template-columns: 56px 1fr 48px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .header {
-        height: 76px;
-        grid-template-rows: 76px;
+        grid-template-columns: 51px 1fr 40px;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     .header {
-        grid-template-columns: 71px 1fr 250px;
+        grid-template-columns: 51px 1fr 230px;
+    }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .header {
+        grid-template-areas:
+            "logo nav . btn";
+        grid-template-columns: 51px 4fr 1fr 230px;
     }
 }
 
-
 /* LOGO */
 .logo-header {
-    position: absolute;
     width: 48px;
     height: 34px;
-    left: 0;
     cursor: pointer;
 }
 /* iPad mini     width-768px - 1023px */
@@ -94,37 +100,33 @@
         height: 36px;
     }
 }
-
-
 .logo-header:hover path{
     fill: rgba(114, 19, 221, 0.87);
+}
+.logo-header:active path{
+    fill: rgba(255, 255, 0, .8);
 }
 
 /* НАВИГАЦИЯ */
 .nav {
     grid-area: nav;
     display: none;
-    flex-wrap: nowrap;
     font-size: 14px;
     font-weight: 500;
-    height: 16px;
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     .nav {
         display: flex;
+        flex-wrap: nowrap;
     }
 }
-
-
-.nav-link {
-    display: inline-block;
+.nav__list {
     text-decoration: none;
     margin-right: 16px;
-    font-weight: 500;
     color: #000
 }
-.nav-link:nth-last-child(1) {
+.nav__list:nth-last-child(1) {
     margin-right: 0;
 }
 .nav__list_materials {
@@ -134,10 +136,7 @@
 /* КНОПКА ПОДОБРАТЬ ПСИХОЛОГА*/
 .btn-header {
     grid-area: btn;
-    box-sizing: border-box;
-    position: absolute;
     display: none;
-    right: 0;
     width: 230px;
     height: 48px;
     font-weight: bold;
@@ -162,17 +161,21 @@
     }
 }
 
-
 /* BURGER */
 .burger {
     grid-area: btn;
-    box-sizing: border-box;
-    position: absolute;
-    padding: 11px;
+    display: flex;
     width: 40px;
     height: 40px;
-    right: 8px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+.burger:hover path{
+    fill: rgba(114, 19, 221, 0.87);
+}
+.burger:active path{
+    fill: rgba(255, 255, 0, .8);
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
@@ -181,32 +184,144 @@
     }
 }
 
-
-.burger:hover path{
-    fill: rgba(114, 19, 221, 0.87);
-}
-
 /* ЛИНИЯ */
 .line {
     grid-area: line;
-    position: absolute;
     width: 100%;
-    height: 0;
-    left: 0;
-    top: 56px;
     border: 0.5px solid rgb(239, 245, 251);
+}
+
+.verhushka {
+    grid-area: verh;
+    width: 100%;
+}
+
+/* НАВИГАЦИЯ ПО СТРАНИЦАМ */
+.verh-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    height: 18px;
+    font-size: 12px;
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
-    .line {
-        top: 72px;
+    .verh-title {
+        margin-top: 16px;
+    }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .verh-title {
+        margin-left: 6px;
+    }
+}
+
+.verh-title__elem {
+    text-decoration: none;
+    color: rgb(51, 51, 51, .7);
+}
+.verh-title__elem::after {
+    content: url(images/main/menu/arrow-right.svg);
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.verh-title__elem:nth-last-child(1)::after {
+    content: '';
+}
+
+/* ЗАГОЛОВОК */
+.blog {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    margin-top: 24px;
+    margin-bottom: 80px;
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .blog {
+        margin-top: 32px;
+        margin-bottom: 72px;
+        height: 40px;
+        font-size: 32px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
-    .line {
-        top: 76px;
+    .blog {
+        margin-top: 40px;
+        margin-bottom: 31px;
+        height: 56px;
+        font-size: 48px;
     }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .blog {
+        margin-top: 30px;
+        margin-bottom: 29px;
+    }
+}
+
+/* ФИЛЬТР */
+.filter {
+    position: absolute;
+    display: flex;
+    width: calc(100vw - 32px);
+    top: 178px;
+    left: 16px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .filter {
+        width: calc(100vw - 40px);
+        top: 202px;
+        left: 20px;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .filter {
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%;
+        top: 0;
+        left: -4px;
+        margin-bottom: 23px;
+    }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .filter {
+        margin-bottom: 21px;
+    }
+}
+
+.filter__btn {
+    display: flex;
+    margin: 2px 4px;
+    padding: 6px 8px;
+    color: rgb(51, 51, 51, .9);
+    border: 1px solid rgb(193, 197, 205);
+    border-radius: 24px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.filter__btn_active {
+    box-sizing: border-box;
+    border: 2px solid rgb(22, 200, 187);
+}
+.smile-svg {
+    margin-right: 4px;
 }
 
 
@@ -216,142 +331,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 56px;
-    left: 0;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .main {
-        top: 72px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .main {
-        top: 76px;
-    }
-}
-
-
-/* НАВИГАЦИЯ ПО СТРАНИЦАМ */
-.main-title {
-    position: absolute;
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    width: 100%;
-    top: 24px;
-    height: 18px;
-    font-size: 12px;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .main-title {
-        top: 16px;
-    }
-}
-
-
-.main-title__elem {
-    text-decoration: none;
-    color: rgb(51, 51, 51, .7);
-}
-.main-title__elem::after {
-    content: ''url(images/main/menu/arrow-right.svg);
-    margin-left: 6px;
-    margin-right: 6px;
-}
-.main-title__elem:nth-last-child(1)::after {
-    content: '';
-    visibility: hidden;
-}
-/* ЗАГОЛОВОК */
-.blog {
-    position: absolute;
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0;
-    width: 100%;
-    height: 32px;
-    top: 66px;
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .blog {
-        top: 74px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .blog {
-        top: 64px;
-    }
-}
-
-
-.blog__zagolovok {
-    font-size: 48px;
-}
-
-/* ФИЛЬТР */
-.filter {
-    position: absolute;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    top: 122px;
-    left: -4px;
-    right: -4px;
-    overflow-x: scroll;
-    scrollbar-width: none;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .filter {
-        top: 130px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .filter {
-        flex-wrap: wrap;
-        top: 162px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .filter {
-        top: 152px;
-    }
-}
-
-
-.filter__btn {
-    display: flex;
-    width: auto;
-    margin: 2px 4px;
-    padding: 6px 8px;
-    color: rgb(51, 51, 51, .9);
-    border: 1px solid rgb(193, 197, 205);
-    border-radius: 24px;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-.filter__btn:hover {
-    cursor: pointer;
-}
-.filter__btn_active {
-    box-sizing: border-box;
-    border: 2px solid rgb(22, 200, 187);
-}   /* .filter-btn:active {
-    border: 2px solid rgb(22, 200, 187); } */
-.smile-svg {
-    margin-right: 4px;
 }
 
 /* КОНТЕНТ */
@@ -359,23 +338,10 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 21px 24px;
-    top: 178px;
+    margin: 0;
     width: 100%;
+    gap: 21px 24px;
 }
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .main-content {
-        top: 258px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .main-content {
-        top: 208px;
-    }
-}
-
 
 .main-content__block {
     position: relative;
@@ -420,7 +386,6 @@
     }
 }
 
-
 .filter-block {
     position: absolute;
     display: flex;
@@ -428,6 +393,10 @@
     padding: 4px 2px;
     z-index: 99;
 }
+button.filter__btn {
+    cursor: pointer;
+}
+
 .block-1__filter-block_elem {
     max-width: max-content;
     border: solid 1px rgba(255, 255, 255, 0.25);
@@ -472,7 +441,6 @@
     }
 }
 
-
 .block-1__image {
     position: relative;
     display: block;
@@ -481,14 +449,6 @@
     max-height: 100%;
     border-radius: 16px 16px 0 0;
 }
-    /* .block-1__image:hover  {
-    position: absolute;
-    transform: scale(0.75);
-    transition: transform 0.2s;
-    z-index: 10;
-    overflow: visible;
-    z-index: 1111;
-} */
 
 .block-2 {
     position: relative;
@@ -526,7 +486,6 @@
     }
 }
 
-
 .block-2_zag3 {
     display: flex;
     margin: 16px 0 0 0;
@@ -559,7 +518,8 @@
     display: flex;
     width: 100%;
     height: 48px;
-    top: 206px;
+    margin-top: 28px;
+    margin-bottom: 59px;
     align-items: center;
     justify-content: center;
 }
@@ -567,16 +527,24 @@
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
     .btn-main {
-        top: 291px;
+        margin-top: 33px;
+        margin-bottom: 55px;
+    }
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .btn-main {
+        margin-top: 35px;
+        margin-bottom: 60px;
     }
 }
 /* Desktop     width-1440px + */
 @media screen and (min-width: 1440px) {
     .btn-main {
-        top: 264px;
+        margin-top: 56px;
+        margin-bottom: 96px;
     }
 }
-
 
 .pages {
     position: absolute;
@@ -584,7 +552,6 @@
     left: 0;
     height: 48px;
 }
-
 .pages-number {
     display: flex;
     justify-content: center;
@@ -607,24 +574,20 @@
 .pages-number_nocursor {
     cursor: default;
 }
-
-
 .pages-number_active {
     box-sizing: border-box;
     border: 1px solid rgb(3, 178, 165);
     background: rgb(227, 245, 245);
 }
-
 .v-nachalo {
     width: 95px;
     margin-right: 24px;
     color: rgb(196, 196, 196);
     background: rgb(239, 242, 242);
 }
-
 .btn-main__more {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 182px;
     height: 48px;
     font-weight: bold;
@@ -643,50 +606,177 @@
     box-shadow: 0 0 20px 5px rgba(73, 148, 30, 0.7); 
 }
 
+
 .footer {
     grid-area: footer;
     position: relative;
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    padding: 16px;
     height: auto;
-    top: 321px;
+    color: #fff;
     background: rgb(41, 99, 163);
 }
 /* iPhone 11 Pro Max     width-414px - 767px */
 @media screen and (min-width: 414px) {
     .footer {
-        top: 337px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 }
 /* iPad mini     width-768px - 1023px */
 @media screen and (min-width: 768px) {
-    .footer {
-        top: 422px;
+    .footer__section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        column-gap: 31px;
     }
 }
 /* iPad Pro 12.9"     width-1024px - 1439px*/
 @media screen and (min-width: 1024px) {
     .footer {
-        top: 427px;
+        padding: 21px 32px;
+    }
+    .footer-bez-ssilok {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .footer__section {
+        column-gap: 21px;
+        flex-grow: 100;
+    }
+    .logo-footer {
+        margin-top: 19px;
+        flex-grow: 99;
+    }
+    .logo-footer__svg {
+        position: relative;
+        left: calc(100% - 221px)
     }
 }
 /* Desktop     width-1440px + */
 @media screen and (min-width: 1440px) {
     .footer {
-        top: 437px;
+        padding: 21px 120px;
     }
 }
 
 .nav-footer {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    flex-grow: 1;
+    height: auto;
+    margin-top: 19px;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .nav-footer {
+        max-width: 310px;
+    }
 }
 
+.nav-footer__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-footer__link {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    height: 24px;
+    color: #fff;
+    text-decoration: none;
+}
 
+.send-bar {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+}
+.odno-pismo {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .odno-pismo {
+        margin-top: 19px;
+    }
+}
+
+.email-bar {
+    display: flex;
+    max-width: 384px;
+    height: 48px;
+}
+.e-mail {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 4px;
+}
+.send-img {
+    position: relative;
+}
+.polit-konfid {
+    margin: 12px 0 5px 0;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 0.7;
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .polit-konfid {
+        margin-bottom: 31px;
+    }
+}
+
+.line-footer {
+    margin-top: 20px;
+    height: 2px;
+    background-color: rgba(157, 157, 157, .3);
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .line-footer {
+        margin-top: 0;
+    }
+}
+
+.ssilki {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .ssilki {
+        flex-direction: row;
+    }
+}
+
+.ssilki__link {
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.7;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .ssilki__link {
+        margin-top: 5px;
+        margin-right: 48px;
+    }
+}
 
 /* БЕЗ CSS КОДА */
 /* iPad mini     width-768px - 1023px */
@@ -695,4 +785,13 @@
         width: 51px;
         height: 36px;
     }
+}
+/* ТУТ MAX-WIDTH. НЕ ПУТАТЬ!!! */
+@media screen and (max-width: 768px) {
+    button.filter__btn:first-child {
+        margin-left: 0;
+    }
+}
+button.filter__btn:last-child {
+    margin-right: 8px;
 }

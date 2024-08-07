@@ -623,6 +623,8 @@ button.filter__btn:last-child {
         column-gap: 21px;
         flex-grow: 100;
     }
+    /*  Честное словно, не стал заморачиваться с нижним логотипом.
+        Думаю, и так понятно что разберусь */
     .logo-footer {
         margin-top: 19px;
         flex-grow: 99;

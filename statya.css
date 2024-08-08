@@ -1,0 +1,502 @@
+/* iPhone SE     width-320px - 414px */
+* {
+    font-family: Montserrat, sans-serif;
+}
+::selection {
+    color: rgb(116, 91, 207);
+    background-color: bisque
+}
+
+.layout {
+    position: relative;
+    display: grid;
+    margin: 0;
+    width: 100%;
+    grid-template-columns: 16px 1fr 16px;
+    grid-template-rows: 56px 1px auto auto auto;
+    grid-template-areas: 
+        ". header ."
+        "line line line"
+        ". verh ."
+        ". main ."
+        "footer footer footer";
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .layout {
+        grid-template-columns: 20px 1fr 20px;
+        grid-template-rows: 72px 1px auto auto auto;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .layout {
+        grid-template-rows: 76px 1px auto auto auto;
+    }
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .layout {
+        grid-template-columns: 32px 1fr 32px;
+    }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .layout {
+        grid-template-columns: 120px 1fr 120px;
+    }  
+}
+
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 48px 1fr 32px;
+    grid-template-areas:
+        "logo nav btn";
+    width: 100%;
+    background: rgb(255, 255, 255);
+    justify-items: center;
+    align-items: center;
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .header {
+        grid-template-columns: 56px 1fr 48px;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .header {
+        grid-template-columns: 51px 1fr 40px;
+    }
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .header {
+        grid-template-columns: 51px 1fr 230px;
+    }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .header {
+        grid-template-areas:
+            "logo nav . btn";
+        grid-template-columns: 51px 4fr 1fr 230px;
+    }
+}
+
+/* LOGO */
+.logo-header {
+    width: 48px;
+    height: 34px;
+    cursor: pointer;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .logo-header {
+        grid-area: logo;
+        width: 51px;
+        height: 36px;
+    }
+}
+.logo-header:hover path{
+    fill: rgba(114, 19, 221, 0.87);
+}
+.logo-header:active path{
+    fill: rgba(255, 255, 0, .8);
+}
+
+/* НАВИГАЦИЯ */
+.nav {
+    grid-area: nav;
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .nav {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
+.nav__list {
+    text-decoration: none;
+    margin-right: 16px;
+    color: #000
+}
+.nav__list:nth-last-child(1) {
+    margin-right: 0;
+}
+.nav__list_materials {
+    margin-right: 2px;
+}
+
+/* КНОПКА ПОДОБРАТЬ ПСИХОЛОГА*/
+.btn-header {
+    grid-area: btn;
+    display: none;
+    width: 230px;
+    height: 48px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #03B2A5;
+    border-radius: 4px;
+    border: none;
+    background: rgb(227, 245, 245);
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
+}
+.btn-header:hover {
+    box-shadow: 0 0 10px 5px rgba(12, 142, 151, 0.5);
+}
+.btn-header:active {
+    box-shadow: 0 0 20px 5px rgba(12, 151, 47, 0.7);
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .btn-header {
+        display: initial;
+    }
+}
+
+/* BURGER */
+.burger {
+    grid-area: btn;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+.burger:hover path{
+    fill: rgba(114, 19, 221, 0.87);
+}
+.burger:active path{
+    fill: rgba(255, 255, 0, .8);
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .burger {
+        display: none;
+    }
+}
+
+/* ЛИНИЯ */
+.line {
+    grid-area: line;
+    width: 100%;
+    border: 0.5px solid rgb(239, 245, 251);
+}
+
+/* НАВИГАЦИЯ ПО СТРАНИЦАМ */
+.verh-title {
+    grid-area: verh;
+    position: relative;
+    display: flex;
+    margin-top: 16px;
+    height: 50px;
+    font-size: 12px;
+    overflow: hidden;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .verh-title {
+        height: 72px;
+    }
+}
+
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .verh-title {
+        margin-left: 6px;
+    }
+}
+
+.verh-title__elem {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: rgb(51, 51, 51, .7);
+}
+.verh-title__elem::after {
+    content: url(images/main/menu/arrow-right.svg);
+    margin-left: 8px;
+    margin-right: 6px;
+}
+.verh-title__elem:last-child::after {
+    content: '';
+    flex-grow: 1;
+}
+.verh-title__elem:not(:last-child) {
+    min-width: max-content;
+}
+
+.main {
+    grid-area: main;
+}
+
+.main-content__zag1 {
+    margin: 0 auto;
+}
+
+.author-date-link {
+    font-size: 14px;
+    color: rgb(73, 73, 73);
+}
+
+.a-d-lf {
+    display: inline-block;
+    text-decoration: none;
+    margin: 8px auto 16px;
+}
+.a-d-lf::after {
+    content: '·';
+    margin-left: 4px;
+}
+.a-d-lf:last-child::after {
+    content: '';
+}
+
+.main-content__link_filter {
+    color: rgb(41, 99, 163);
+}
+
+
+.for-images {
+    position: relative;
+    widows: 100%;
+}
+
+.main-content__images {
+    position: relative;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+    border-radius: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    grid-area: footer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: auto;
+    color: #fff;
+    background: rgb(41, 99, 163);
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .footer {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .footer__section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        column-gap: 31px;
+    }
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .footer {
+        padding: 21px 32px;
+    }
+    .footer-bez-ssilok {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .footer__section {
+        column-gap: 21px;
+        flex-grow: 100;
+    }
+    .logo-footer {
+        margin-top: 19px;
+        flex-grow: 99;
+    }
+    .logo-footer__svg {
+        position: relative;
+        left: calc(100% - 221px)
+    }
+}
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .footer {
+        padding: 21px 120px;
+    }
+}
+
+.nav-footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 19px;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .nav-footer {
+        max-width: 310px;
+    }
+}
+
+.nav-footer__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-footer__link {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    height: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.send-bar {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+}
+.odno-pismo {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .odno-pismo {
+        margin-top: 19px;
+    }
+}
+
+.email-bar {
+    display: flex;
+    max-width: 384px;
+    height: 48px;
+}
+.e-mail {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 4px;
+}
+.send-img {
+    position: relative;
+}
+.polit-konfid {
+    margin: 12px 0 5px 0;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 0.7;
+}
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .polit-konfid {
+        margin-bottom: 31px;
+    }
+}
+
+.line-footer {
+    margin-top: 20px;
+    height: 2px;
+    background-color: rgba(157, 157, 157, .3);
+}
+/* iPad Pro 12.9"     width-1024px - 1439px*/
+@media screen and (min-width: 1024px) {
+    .line-footer {
+        margin-top: 0;
+    }
+}
+
+.ssilki {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .ssilki {
+        flex-direction: row;
+    }
+}
+
+.ssilki__link {
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.7;
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .ssilki__link {
+        margin-top: 5px;
+        margin-right: 48px;
+    }
+}
+
+/* БЕЗ CSS КОДА */
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .logo-header__svg {  
+        width: 51px;
+        height: 36px;
+    }
+}

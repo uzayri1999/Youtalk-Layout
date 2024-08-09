@@ -327,7 +327,12 @@
    
 
 }
-.podzag-0, .podzag-1, .podzag-2 {
+
+.podzag-0 {
+    display: inline-block;
+}
+
+.podzag-0, .podzag-1, .podzag-2, .podzag-3 {
     cursor: pointer;
 }
 .podzag-0:hover > .podzag-1, .podzag-2, .podzag-3 {

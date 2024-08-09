@@ -1,6 +1,7 @@
 /* iPhone SE     width-320px - 414px */
 * {
     font-family: Montserrat, sans-serif;
+    color: rgb(51, 51, 51);
 }
 ::selection {
     color: rgb(116, 91, 207);
@@ -36,6 +37,7 @@
 
 /* LOGO */
 .logo-header {
+    grid-area: logo;
     width: 48px;
     height: 34px;
     cursor: pointer;
@@ -175,6 +177,14 @@
     font-weight: 600;
     white-space: nowrap;
 }
+.filter__btn:not(.filter__btn_active) {
+    &:hover {
+        box-sizing: border-box;
+        transition: 0.1s;
+        transform: scale(1.04);
+        border: 1px dashed rgb(199, 59, 235);
+    }
+}
 .filter__btn_active {
     box-sizing: border-box;
     border: 2px solid rgb(22, 200, 187);
@@ -258,6 +268,7 @@ button.filter__btn {
     height: auto;
     max-height: 249px;
     margin: 16px;
+    overflow: hidden;
 }
 
 .block-2_zag3 {
@@ -399,6 +410,7 @@ button.filter__btn {
     margin: 8px 0;
     font-size: 18px;
     font-weight: 700;
+    color: rgb(255, 255, 255);
 }
 .email-bar {
     display: flex;
@@ -421,7 +433,7 @@ button.filter__btn {
     margin: 12px 0 5px 0;
     font-size: 12px;
     line-height: 18px;
-    opacity: 0.7;
+    color: rgba(255, 255, 255, .7);
 }
 
 .line-footer {
@@ -502,7 +514,6 @@ button.filter__btn:last-child {
         grid-template-columns: 51px 1fr 40px;
     }
     .logo-header {
-        grid-area: logo;
         width: 51px;
         height: 36px;
     }

@@ -1,6 +1,11 @@
+/* НЕ ЗАБЫТЬ СКОПИРОВАТЬ ХИДЕР И ФУТЕР */
+
+
 /* iPhone SE     width-320px - 414px */
 * {
     font-family: Montserrat, sans-serif;
+}
+*:not(.footer) {
     color: rgb(51, 51, 51);
 }
 ::selection {
@@ -224,7 +229,7 @@
     color: rgb(51, 51, 51, .7);
 }
 .verh-title__elem::after {
-    content: url(images/main/menu/arrow-right.svg);
+    content: url(../images/main/menu/arrow-right.svg);
     margin-left: 8px;
     margin-right: 6px;
 }
@@ -240,12 +245,32 @@
     grid-area: main;
 
 
-    /* убрать послею... */ 
+
+
+    /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        убрать после... */ 
     margin-bottom: 100px;
 }
 
 .main-content__zag1 {
     margin: 0 auto;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .main-content__zag1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .main-content__zag1 {
+        font-size: 48px;
+        line-height: 56px;
+    }
 }
 
 .author-date-link {
@@ -266,49 +291,42 @@
     content: '';
 }
 
-.main-content__link_filter {
+.author-date-link__link_filter {
     color: rgb(41, 99, 163);
 }
 
-
-.main-content__for-images {
-    position: relative;
+.swim-girl-photo-img {
     width: 100%;
-    overflow: hidden;
-}
-
-.main-content__images {
-    position: relative;
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    max-height: 100%;
-    border-radius: 16px;
+    border-radius: calc(100vw*0.012);
 }  
 
+
+/* iPhone 11 Pro Max     width-414px - 767px */
+@media screen and (min-width: 414px) {
+    .soderjanie {
+        margin-top: 24px;
+    }
+    .soderjanie__link:first-child {
+        margin-top: 16px;
+    }
+}
 .soderjanie__zag {
     list-style-type: none;
+    font-size: 16px;
+    font-weight: bold;
     padding: 0;
 }
 .soderjanie__link {
     position: relative;
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    padding-left: 24px;
+    padding-left: 32px;
     margin-top: 8px;
-    
-
-/* 
-    background-image: url(images/statya/Ellipse.svg);
-    background-size: 8px 8px;
-    background-repeat: no-repeat;
-    background-position: 0 50%;
-    padding-left: 30px;
-    line-height: 24px;
-    white-space: wrap; */
+    font-weight: 400;
+    cursor: pointer;
 }
 .soderjanie__link::before {
-    content: url(images/statya/Ellipse.svg);
+    content: url(../images/statya/Ellipse.svg);
     position: absolute;
     left: 8px;
     width: 8px;
@@ -316,16 +334,11 @@
 }
 
 .soderjanie_podzag {
-
-    display: none;
+    display: block;
     margin-top: 8px;
-
     list-style-type: none;
     padding: 0;
     padding-left: 24px;
-
-   
-
 }
 
 .podzag-0 {
@@ -335,14 +348,294 @@
 .podzag-0, .podzag-1, .podzag-2, .podzag-3 {
     cursor: pointer;
 }
-.podzag-0:hover > .podzag-1, .podzag-2, .podzag-3 {
-    display: block;
+
+.zag-h3 {
+    margin-top: 24px;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.p-in-zag-h3 {
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.citata {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    padding: 16px;
+    gap: 8px;
+    border-radius: 16px;
+    background: rgb(243, 247, 254);
+}
+.citata::before {
+    content: url(../images/statya/number-66.svg);
+    position: absolute;
+    left: 24px;
+    width: 56px;
+    height: 36px;
+}
+
+.citata-text {
+    margin: 0;
+    font-style: italic;
+    line-height: 24px;
+}
+.citata-author {
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.chto-delatb__with-trevogoy {
+    list-style-type: none;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 24px;
+    padding: 0;
+}
+.chto-delatb__link {
+    position: relative;
+    padding-left: 32px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.chto-delatb__link::before {
+    content: url(../images/statya/Ellipse.svg);
+    position: absolute;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+}
+
+.boys-photo-block {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    margin-top: 24px;
+    padding: 0;
+}
+
+.boys-photo-img {
+    width: 100%;
+    border-radius: calc(100vw*0.012);
+}
+.boys-photo-opis {
+    margin: 0;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgb(134, 134, 134);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.text-all {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.text-2-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 168px;
+}
+.text-2-img {
+    position: absolute;
+    z-index: -1;
+}
+.text-2 {
+    text-align: center;
+    font-style: italic;
+}
+
+.text-4-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.text-4-img-block {
+    display: flex;
+    overflow: hidden;
+    max-height: 380px;
+    align-items: center;
+}
+.text-4-img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+.text-6-block, .text-10-block, .text-14-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    border-radius: 16px;
+    background: rgb(254, 250, 236);
+}
+.text-6-zag, .text-10-zag, .text-14-zag {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.text-7-zag{
+    list-style-type: none;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.text-7 {
+    position: relative;
+    padding-left: 32px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.text-7::before {
+    content: url(../images/statya/Ellipse.svg);
+    position: absolute;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+}
+
+.text-8-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.text-8-img-block {
+    display: flex;
+    overflow: hidden;
+    max-width: 374px;
+    align-items: center;
+}
+.text-8-img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+.text-10-block {
+    background: rgb(255, 243, 235);
+}
+
+.text-11-block-common {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.text-11-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.text-11-img-block {
+    display: flex;
+    overflow: hidden;
+    max-width: 374px;
+    align-items: center;
+}
+.text-11-img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+.text-12-block {
+    display: flex;
+    justify-content: center;
+}
+
+.text-14-block {
+    background: rgba(3, 178, 165, 0.1);
+}
+
+.text-15-block {
+
+}
+.tags {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(41, 99, 163);
+}
+
+.tags:not(.tags-no-point, .tags:last-child)::after {
+    content: "·";
+    margin-left: 4px;
 }
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* iPad mini     width-768px - 1023px */
+@media screen and (min-width: 768px) {
+    .text-4-block, .text-8-block, .text-11-block-common {
+        flex-direction: row;
+    }
+    .text-4-img-block {
+        overflow: visible;
+        max-height: 380px;
+    }
+    .text-4-img, .text-8-img, .text-11-img {
+        width: auto;
+    }
+    .text-8-img-block, .text-11-img-block {
+        overflow: visible;
+    }
+}
 
 
 
@@ -594,3 +887,5 @@
         height: 36px;
     }
 }
+
+/* НЕ ЗАБЫТЬ СКОПИРОВАТЬ ХИДЕР И ФУТЕР */

@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Montserrat_Regular")
+        url(../Montserrat/static/woff2/Montserrat-Regular.woff2) format("woff2"),
+        url(../Montserrat/static/woff/Montserrat-Regular.woff) format("woff"),
+        url(../Montserrat/static/ttf/Montserrat-Regular.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: bold;
+    src: local("Montserrat_Bold")
+        url(../Montserrat/static/woff2/Montserrat-Bold.woff2) format("woff2"),
+        url(../Montserrat/static/woff/Montserrat-Bold.woff) format("woff"),
+        url(../Montserrat/static/ttf/Montserrat-Bold.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 500;
+    src: local("Montserrat_Medium")
+        url(../Montserrat/static/woff2/Montserrat-Medium.woff2) format("woff2"),
+        url(../Montserrat/static/woff/Montserrat-Medium.woff) format("woff"),
+        url(../Montserrat/static/ttf/Montserrat-Medium.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 600;
+    src: local("Montserrat_SemiBold")
+        url(../Montserrat/static/woff2/Montserrat-SemiBold.woff2) format("woff2"),
+        url(../Montserrat/static/woff/Montserrat-SemiBold.woff) format("woff"),
+        url(../Montserrat/static/ttf/Montserrat-SemiBold.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Montserrat_Italic")
+        url(../Montserrat/static/woff2/Montserrat-Italic.woff2) format("woff2"),
+        url(../Montserrat/static/woff/Montserrat-Italic.woff) format("woff"),
+        url(../Montserrat/static/ttf/Montserrat-Italic.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open_Sans_Regular")
+        url(../Open_Sans/static/woff2/OpenSans-Regular.woff2) format("woff2"),
+        url(../Open_Sans/static/woff/OpenSans-Regular.woff) format("woff"),
+        url(../Open_Sans/static/ttf/OpenSans-Regular.ttf) format("ttf");
+}

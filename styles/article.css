@@ -1,12 +1,6 @@
-/* НЕ ЗАБЫТЬ СКОПИРОВАТЬ ХИДЕР И ФУТЕР */
-
-
 /* iPhone SE     width-320px - 414px */
 * {
     font-family: Montserrat, sans-serif;
-}
-*:not(.footer) {
-    color: rgb(51, 51, 51);
 }
 ::selection {
     color: rgb(116, 91, 207);
@@ -28,33 +22,8 @@
         ". main-end ."
         "blue-fon blue-fon blue-fon"
         "footer footer footer";
+    color: rgb(51, 51, 51);
 }
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .layout {
-        grid-template-columns: 20px 1fr 20px;
-        grid-template-rows: 72px 1px auto auto auto auto auto;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .layout {
-        grid-template-rows: 76px 1px auto auto auto auto auto;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .layout {
-        grid-template-columns: 32px 1fr 32px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .layout {
-        grid-template-columns: 120px 1fr 120px;
-    }  
-}
-
 
 .header {
     grid-area: header;
@@ -67,46 +36,12 @@
     justify-items: center;
     align-items: center;
 }
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .header {
-        grid-template-columns: 56px 1fr 48px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .header {
-        grid-template-columns: 51px 1fr 40px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .header {
-        grid-template-columns: 51px 1fr 230px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .header {
-        grid-template-areas:
-            "logo nav . btn";
-        grid-template-columns: 51px 4fr 1fr 230px;
-    }
-}
 
 /* LOGO */
 .logo-header {
     width: 48px;
     height: 34px;
     cursor: pointer;
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .logo-header {
-        grid-area: logo;
-        width: 51px;
-        height: 36px;
-    }
 }
 .logo-header:hover path{
     fill: rgba(114, 19, 221, 0.87);
@@ -121,13 +56,6 @@
     display: none;
     font-size: 14px;
     font-weight: 500;
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .nav {
-        display: flex;
-        flex-wrap: nowrap;
-    }
 }
 .nav__list {
     text-decoration: none;
@@ -162,12 +90,6 @@
 .btn-header:active {
     box-shadow: 0 0 20px 5px rgba(12, 151, 47, 0.7);
 }
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .btn-header {
-        display: initial;
-    }
-}
 
 /* BURGER */
 .burger {
@@ -184,12 +106,6 @@
 }
 .burger:active path{
     fill: rgba(255, 255, 0, .8);
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .burger {
-        display: none;
-    }
 }
 
 /* ЛИНИЯ ВЕРХНЯЯ*/
@@ -209,20 +125,6 @@
     font-size: 12px;
     overflow: hidden;
 }
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .verh-title {
-        height: 72px;
-    }
-}
-
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .verh-title {
-        margin-left: 6px;
-    }
-}
-
 .verh-title__elem {
     overflow: hidden;
     white-space: nowrap;
@@ -248,47 +150,15 @@
     display: flex;
     flex-direction: column;
 }
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .main {
-        flex-direction: row;
-        gap: 24px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .main {
-        gap: 228px;
-    }
-}
-
-
 .main-content__zag1 {
     margin: 0 auto;
     font-size: 24px;
     line-height: 32px;
 }
-
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .main-content__zag1 {
-        font-size: 32px;
-        line-height: 40px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .main-content__zag1 {
-        font-size: 48px;
-        line-height: 56px;
-    }
-}
-
 .author-date-link {
     font-size: 14px;
     color: rgb(73, 73, 73);
 }
-
 .a-d-lf {
     display: inline-block;
     text-decoration: none;
@@ -301,26 +171,14 @@
 .a-d-lf:last-child::after {
     content: '';
 }
-
 .author-date-link__link_filter {
     color: rgb(41, 99, 163);
 }
-
 .swim-girl-photo-img {
     width: 100%;
     border-radius: calc(100vw*0.012);
 }  
 
-
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .soderjanie {
-        margin-top: 24px;
-    }
-    .soderjanie__link:first-child {
-        margin-top: 16px;
-    }
-}
 .soderjanie__zag {
     list-style-type: none;
     font-size: 16px;
@@ -343,7 +201,6 @@
     width: 8px;
     height: 8px;
 }
-
 .soderjanie_podzag {
     display: block;
     margin-top: 8px;
@@ -351,11 +208,9 @@
     padding: 0;
     padding-left: 24px;
 }
-
 .podzag-0 {
     display: inline-block;
 }
-
 .podzag-0, .podzag-1, .podzag-2, .podzag-3 {
     cursor: pointer;
 }
@@ -365,7 +220,6 @@
     margin-bottom: 0;
     font-size: 18px;
 }
-
 .p-in-zag-h3 {
     margin-top: 16px;
     margin-bottom: 0;
@@ -373,7 +227,6 @@
     font-weight: 500;
     line-height: 24px;
 }
-
 .citata {
     position: relative;
     display: flex;
@@ -391,7 +244,6 @@
     width: 56px;
     height: 36px;
 }
-
 .citata-text {
     margin: 0;
     font-style: italic;
@@ -436,7 +288,6 @@
     margin-top: 24px;
     padding: 0;
 }
-
 .boys-photo-img {
     width: 100%;
     border-radius: calc(100vw*0.012);
@@ -493,6 +344,7 @@
     width: 100%;
     max-height: 100%;
 }
+
 .text-6-block, .text-10-block, .text-14-block {
     display: flex;
     flex-direction: column;
@@ -560,17 +412,21 @@
     flex-direction: column;
     gap: 24px;
 }
-
 .text-11-block {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    align-items: center;
+    padding: 24px;
+    border-radius: 24px;
+    background-color: rgb(247, 230, 245);
 }
 .text-11-img-block {
     display: flex;
     overflow: hidden;
     max-width: 374px;
     align-items: center;
+    border-radius: 16px;
 }
 .text-11-img {
     object-fit: cover;
@@ -586,26 +442,20 @@
 .text-14-block {
     background: rgba(3, 178, 165, 0.1);
 }
+
 .text-15-block {
     display: none;
+    
 }
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .text-15-block {
-        display: inherit;
-    }
-}
-
-
 .tags {
     display: inline-block;
+    white-space: nowrap;
     text-decoration: none;
     margin-bottom: 4px;
     font-size: 14px;
     line-height: 20px;
     color: rgb(41, 99, 163);
 }
-
 .tags:not(.tags-no-point, .tags:last-child)::after {
     content: "·";
     margin-left: 4px;
@@ -621,12 +471,6 @@
 .main-end {
     grid-area: main-end;
     display: none;
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .main-end {
-        display: initial;
-    }
 }
 
 .luja-pink-big {
@@ -668,14 +512,12 @@
     font-size: 48px;
     line-height: 56px;
 }
-
 .problema-and-parochka {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 428px;
 }
-
 .problema__text {
     font-size: 18px;
     line-height: 26px;
@@ -702,51 +544,21 @@
 }
 
 .footer-blue-fon {
+    display: none;
     grid-area: blue-fon;
     overflow: hidden;
     height: 82px;
 }
 .footer-blue-fon-img {
-    display: none;
     width: 100%;
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .footer-blue-fon-img {
-        display: initial;
-    }
 }
 
 .aside {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-top: 24px;
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .aside {
-
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .aside {
-
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .aside {
-        width: 222px; 
-        margin-top: 0;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .aside {
-        width: 282px;
-    }
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .aside-block-12, .aside-block-34 {
@@ -755,22 +567,6 @@
     align-items: center;
     gap: 24px;
 }
-@media screen and (min-width: 768px) {
-    .aside-block-12, .aside-block-34 {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .aside-block-12, .aside-block-34 {
-        flex-direction: column;
-        
-    align-items: center;
-    }
-}
-
-
 .aside-block-1 {
     box-sizing: border-box;
     display: flex;
@@ -778,30 +574,13 @@
     gap: 24px;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     padding: 20px;
     border-radius: 16px;
     background: rgb(230, 240, 253);
 }
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .aside-block-1, .aside-block-2, .aside-block-3, .aside-block-4 {
-        max-width: 356px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .aside-block-1 {
-        width: 100%;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .aside-block-1 {
-        padding: 24px;
-    }
-}
-
 .aside-block-1__img {
+    width: 100%;
     max-width: 257px;
     height: auto;
 }
@@ -838,7 +617,6 @@
     cursor: pointer;
 }
 
-
 .aside-block-2 {
     box-sizing: border-box;
     position: relative;
@@ -850,7 +628,6 @@
     border: 1px solid rgb(222, 222, 222);
     border-radius: 16px;
 }
-
 .aside-block-2__first-block {
     display: flex;
     justify-content: center;
@@ -884,7 +661,6 @@
     font-weight: 500;
     line-height: 18px;
 }
-
 .liliya-psycholog-img {
     border-radius: 50%;
 }
@@ -895,7 +671,6 @@
     align-items: center;
     gap: 16px;
 }
-
 .aside-block-2__zag-text {
     display: flex;
     flex-direction: column;
@@ -927,8 +702,6 @@
     content: "·";
     margin: 0 4px;
 }
-
-
 .aside-block-2__list {
     list-style-type: none;
     font-size: 16px;
@@ -954,7 +727,6 @@
     width: 8px;
     height: 8px;
 }
-
 .aside-block-2__line {
     width: 100%;
     height: 1px;
@@ -1031,68 +803,6 @@
     left: 143px;
     z-index: 3;
 }
-/* iPhone 11 Pro Max     width-414px + */
-@media screen and (min-width: 414px) {
-    .aside-block-3 {
-        width: 374px;
-        height: 250px;
-    }
-    .darite-zabotu_text {
-        margin: 0 60px;
-    }
-}
-/* iPad mini     width-768px + */
-@media screen and (min-width: 768px) {
-    .darite-zabotu_text {
-        margin: 0 51px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px + */
-@media screen and (min-width: 1024px) {
-    .aside-block-3 {
-        width: 222px;
-    }
-    .darite-zabotu_text {
-        margin: 0 30px;
-    }
-    .darite-zabotu_podarok-1 /* YELLOW */ {
-        width: 146px;
-        height: 112px;
-        top: 180px;
-        left: -50px;
-    }
-    .darite-zabotu_podarok-2 /* RED */ {
-        width: 120px;
-        height: 79px;
-        top: 216px;
-        left: 135px;
-    }
-    .darite-zabotu_podarok-3 /* BLUE */ {
-        width: 159px;
-        height: 167px;
-        top: 152px;
-        left: 64px;
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .aside-block-3 {
-        width: 282px;
-    }
-    .darite-zabotu_text {
-        margin: 0 24px;
-    }
-    .darite-zabotu_podarok-1 /* YELLOW */ {
-        left: -10px;
-    }
-    .darite-zabotu_podarok-2 /* RED */ {
-        left: 175px;
-    }
-    .darite-zabotu_podarok-3 /* BLUE */ {
-        left: 104px;
-    }
-}
-
 
 .aside-block-4 {
     box-sizing: border-box;
@@ -1146,7 +856,6 @@
     background: rgb(53, 179, 169);
     cursor: pointer;
 }
-
 .aside-block-4-podarok-1 /* BLUE */ {
     position: absolute;
     width: 105px;
@@ -1162,89 +871,8 @@
     top: 74.6%;
     left: 54.86%;
 }
-/* iPhone 11 Pro Max     width-414px + */
-@media screen and (min-width: 414px) {
-    .aside-block-4 {
-        padding: 24px;
-    }
-    .aside-block-4-podarok-1 /* BLUE */ {
-        width: 137px;
-        height: 121px;
-        top: 70.4%;
-        left: 59.89%;
-    }
-    .aside-block-4-podarok-2 /* RED */ {
-        width: 112px;
-        height: 106px;
-        top: 65.6%;
-        left: 52.67%;
-    }
-}
-/* iPad Pro 12.9"     width-1024px + */
-@media screen and (min-width: 1024px) {
-    .aside-block-4-podarok-1 /* BLUE */ {
-        width: 108px;
-        height: 123px;
-        top: 76.54%;
-        left: 68.92%;
-    }
-    .aside-block-4-podarok-2 /* RED */ {
-        width: 88px;
-        height: 107px;
-        top: 72.07%;
-        left: 58.56%;
-    }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .text-4-block, .text-8-block, .text-11-block-common {
-        flex-direction: row;
-    }
-    .text-4-img-block {
-        overflow: visible;
-        max-height: 380px;
-    }
-    .text-4-img, .text-8-img, .text-11-img {
-        width: auto;
-    }
-    .text-8-img-block, .text-11-img-block {
-        overflow: visible;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* FOOTER */
 .footer {
     grid-area: footer;
     position: relative;
@@ -1252,53 +880,8 @@
     flex-direction: column;
     padding: 16px;
     height: auto;
-    color: #fff;
+    color: rgb(255, 255, 255);
     background: rgb(41, 99, 163);
-}
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .footer {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-}
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .footer__section {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 8px;
-        column-gap: 31px;
-    }
-}
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .footer {
-        padding: 21px 32px;
-    }
-    .footer-bez-ssilok {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-    }
-    .footer__section {
-        column-gap: 21px;
-        flex-grow: 100;
-    }
-    .logo-footer {
-        margin-top: 19px;
-        flex-grow: 99;
-    }
-    .logo-footer__svg {
-        position: relative;
-        left: calc(100% - 221px)
-    }
-}
-/* Desktop     width-1440px + */
-@media screen and (min-width: 1440px) {
-    .footer {
-        padding: 21px 120px;
-    }
 }
 
 .nav-footer {
@@ -1310,13 +893,6 @@
     height: auto;
     margin-top: 19px;
 }
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .nav-footer {
-        max-width: 310px;
-    }
-}
-
 .nav-footer__block {
     display: flex;
     flex-direction: column;
@@ -1327,8 +903,8 @@
     font-weight: bold;
     font-size: 16px;
     height: 24px;
-    color: #fff;
     text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 .send-bar {
@@ -1341,13 +917,6 @@
     font-size: 18px;
     font-weight: 700;
 }
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .odno-pismo {
-        margin-top: 19px;
-    }
-}
-
 .email-bar {
     display: flex;
     max-width: 384px;
@@ -1370,59 +939,297 @@
     line-height: 18px;
     opacity: 0.7;
 }
-/* iPhone 11 Pro Max     width-414px - 767px */
-@media screen and (min-width: 414px) {
-    .polit-konfid {
-        margin-bottom: 31px;
-    }
-}
 
 .line-footer {
     margin-top: 20px;
     height: 2px;
     background-color: rgba(157, 157, 157, .3);
 }
-/* iPad Pro 12.9"     width-1024px - 1439px*/
-@media screen and (min-width: 1024px) {
-    .line-footer {
-        margin-top: 0;
-    }
-}
-
 .ssilki {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
 }
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .ssilki {
-        flex-direction: row;
-    }
-}
-
 .ssilki__link {
     text-decoration: none;
     margin: 10px 0;
     font-size: 14px;
-    color: #fff;
-    opacity: 0.7;
+    color: rgba(255, 255, 255, .7);
 }
-/* iPad mini     width-768px - 1023px */
+
+
+/* iPhone 11 Pro Max     width-414px + */
+@media screen and (min-width: 414px) {
+    .layout {
+        grid-template-columns: 20px 1fr 20px;
+        grid-template-rows: 72px 1px auto auto auto auto auto;
+    }
+    .header {
+        grid-template-columns: 56px 1fr 48px;
+    }
+    .main-content__zag1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .soderjanie {
+        margin-top: 24px;
+    }
+    .soderjanie__link:first-child {
+        margin-top: 16px;
+    }
+    .aside {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .aside-block-3 {
+        width: 374px;
+        height: 250px;
+    }
+    .darite-zabotu_text {
+        margin: 0 60px;
+    }
+    .aside-block-4 {
+        padding: 24px;
+    }
+    .aside-block-4-podarok-1 /* BLUE */ {
+        width: 137px;
+        height: 121px;
+        top: 70.4%;
+        left: 59.89%;
+    }
+    .aside-block-4-podarok-2 /* RED */ {
+        width: 112px;
+        height: 106px;
+        top: 65.6%;
+        left: 52.67%;
+    }
+    .footer {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .polit-konfid {
+        margin-bottom: 31px;
+    }
+}
+
+/* iPad mini     width-768px + */
 @media screen and (min-width: 768px) {
+    .layout {
+        grid-template-rows: 76px 1px auto auto auto auto auto;
+    }
+    .header {
+        grid-template-columns: 51px 1fr 40px;
+    }
+    .logo-header {
+        grid-area: logo;
+        width: 51px;
+        height: 36px;
+    }
+    .logo-header__svg {  
+        width: 51px;
+        height: 36px;
+    }
+    .verh-title {
+        height: 72px;
+    }
+    .main-content__zag1 {
+        font-size: 48px;
+        line-height: 56px;
+    }
+    .aside-block-12, .aside-block-34 {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .darite-zabotu_text {
+        margin: 0 51px;
+    }
+    .aside-block-1, .aside-block-2, .aside-block-3, .aside-block-4 {
+        max-width: 356px;
+    }
+    .aside-block-2 {
+        padding: 20px;
+    }
+    .text-4-block, .text-8-block, .text-11-block-common {
+        flex-direction: row;
+    }
+    .text-4-img-block {
+        overflow: visible;
+        max-height: 380px;
+    }
+    .text-4-img, .text-8-img {
+        width: auto;
+    }
+    .text-8-img-block {
+        overflow: visible;
+    }
+    .footer__section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        column-gap: 31px;
+    }
+    .nav-footer {
+        max-width: 310px;
+    }
+    .odno-pismo {
+        margin-top: 19px;
+    }
+    .ssilki {
+        flex-direction: row;
+    }
     .ssilki__link {
         margin-top: 5px;
         margin-right: 48px;
     }
 }
 
-/* БЕЗ CSS КОДА */
-/* iPad mini     width-768px - 1023px */
-@media screen and (min-width: 768px) {
-    .logo-header__svg {  
-        width: 51px;
-        height: 36px;
+/* iPad Pro 12.9"     width-1024px + */
+@media screen and (min-width: 1024px) {
+    .layout {
+        grid-template-columns: 32px 1fr 32px;
+    }
+    .header {
+        grid-template-columns: 51px 1fr 230px;
+    }
+    .nav {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .btn-header {
+        display: initial;
+    }
+    .burger {
+        display: none;
+    }
+    .main {
+        flex-direction: row;
+        gap: 24px;
+    }
+    .main-beginning {
+        margin-bottom: 32px;
+    }
+    .aside {
+        width: 222px; 
+        margin-top: 0;
+    }
+    .aside-block-12, .aside-block-34 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .aside-block-1 {
+        width: 100%;
+    }
+    .aside-block-3 {
+        width: 222px;
+    }
+    .darite-zabotu_text {
+        margin: 0 30px;
+    }
+    .darite-zabotu_podarok-1 /* YELLOW */ {
+        width: 146px;
+        height: 112px;
+        top: 180px;
+        left: -50px;
+    }
+    .darite-zabotu_podarok-2 /* RED */ {
+        width: 120px;
+        height: 79px;
+        top: 216px;
+        left: 135px;
+    }
+    .darite-zabotu_podarok-3 /* BLUE */ {
+        width: 159px;
+        height: 167px;
+        top: 152px;
+        left: 64px;
+    }
+    .aside-block-4-podarok-1 /* BLUE */ {
+        width: 108px;
+        height: 123px;
+        top: 76.54%;
+        left: 68.92%;
+    }
+    .aside-block-4-podarok-2 /* RED */ {
+        width: 88px;
+        height: 107px;
+        top: 72.07%;
+        left: 58.56%;
+    }
+    .footer {
+        padding: 21px 32px;
+    }
+    .footer-bez-ssilok {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .footer__section {
+        column-gap: 21px;
+        flex-grow: 100;
+    }
+    .logo-footer {
+        margin-top: 19px;
+        flex-grow: 99;
+    }
+    .logo-footer__svg {
+        position: relative;
+        left: calc(100% - 221px)
+    }
+    .line-footer {
+        margin-top: 0;
     }
 }
 
-/* НЕ ЗАБЫТЬ СКОПИРОВАТЬ ХИДЕР И ФУТЕР */
+/* Desktop     width-1440px + */
+@media screen and (min-width: 1440px) {
+    .layout {
+        grid-template-columns: 120px 1fr 120px;
+    }
+    .header {
+        grid-template-areas:
+            "logo nav . btn";
+        grid-template-columns: 51px 4fr 1fr 230px;
+    }
+    .verh-title {
+        margin-left: 6px;
+    }
+    .main {
+        gap: 228px;
+    }
+    .text-15-block {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .main-end {
+        display: initial;
+    }
+    .footer-blue-fon {
+        display: initial;
+    }
+    .main-beginning {
+        margin-bottom: 0;
+    }.aside {
+        width: 282px;
+    }
+    .aside-block-1 {
+        padding: 24px;
+    }
+    .aside-block-3 {
+        width: 282px;
+    }
+    .darite-zabotu_text {
+        margin: 0 24px;
+    }
+    .darite-zabotu_podarok-1 /* YELLOW */ {
+        left: -10px;
+    }
+    .darite-zabotu_podarok-2 /* RED */ {
+        left: 175px;
+    }
+    .darite-zabotu_podarok-3 /* BLUE */ {
+        left: 104px;
+    }
+    .footer {
+        padding: 21px 120px;
+    }
+}
